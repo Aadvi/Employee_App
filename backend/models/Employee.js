@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const EmployeeSchema = new mongoose.Schema({
   firstName: String,
@@ -8,4 +8,4 @@ const EmployeeSchema = new mongoose.Schema({
   salary: Number,
 });
 
-module.exports = mongoose.model("Employee", EmployeeSchema);
+export default mongoose.model("Employee", EmployeeSchema);

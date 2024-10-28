@@ -1,4 +1,4 @@
-const Employee = require("../models/Employee");
+import Employee from "../models/Employee";
 
 //Add Employee
 exports.addEmploye = async (req, res) => {
