@@ -1,7 +1,7 @@
-import Employee from "../models/Employee";
+import Employee from "../models/Employee.js";
 
 //Add Employee
-exports.addEmploye = async (req, res) => {
+export const addEmployee = async (req, res) => {
   try {
     const employee = new Employee(req.body);
     await employee.save();
@@ -12,7 +12,7 @@ exports.addEmploye = async (req, res) => {
 };
 
 //edit employee
-exports.updateEmployee = async (req, res) => {
+export const updateEmployee = async (req, res) => {
   try {
     const { id } = req.params;
     const updatedEmployee = await Employee.findByIdAndUpdate(id, req.body, {
@@ -27,7 +27,7 @@ exports.updateEmployee = async (req, res) => {
 
 //Delete employee
 
-exports.deleteEmployee = async (req, res) => {
+export const deleteEmployee = async (req, res) => {
   try {
     const { id } = req.params;
     const deletedEmployee = await Employee.findByIdAndDelete(id);
@@ -40,7 +40,7 @@ exports.deleteEmployee = async (req, res) => {
 };
 
 // get all employe, filter and sorting pagination as well
-exports.getEmployee = async (req, res) => {
+export const getEmployee = async (req, res) => {
   try {
     const { page = 1, limit = 5, department, sort, search } = req.query;
 
